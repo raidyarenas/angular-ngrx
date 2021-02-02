@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'angular-ngrx';
+  title = 'State Management Practice With Angular And NgRx';
 }

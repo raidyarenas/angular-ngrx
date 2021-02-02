@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-ngrx'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-ngrx');
+    expect(app.title).toEqual('State Management Practice With Angular And NgRx');
   });
 
   it('should render title', () => {
