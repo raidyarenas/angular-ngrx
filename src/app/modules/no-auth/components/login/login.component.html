@@ -1,0 +1,15 @@
+<form [formGroup]="formLogin" novalidate (ngSubmit)="submit()">
+  <mat-form-field appearance="outline" >
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Username" formControlName="username">
+    <mat-icon matPrefix>account_circle</mat-icon>
+    <mat-error *ngIf="formLogin.get('username').invalid">{{ getMessage(formLogin.get('username')) }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Password" formControlName="password">
+    <mat-icon matPrefix>password</mat-icon>
+    <mat-error *ngIf="formLogin.get('password').invalid">{{ getMessage(formLogin.get('password')) }}</mat-error>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="formLogin.invalid">Sign In</button>
+</form>
