@@ -1,1 +1,44 @@
-<p>register works!</p>
+<form [formGroup]="formRegister" novalidate (ngSubmit)="submit()">
+
+  <mat-form-field appearance="outline" >
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="First Name" formControlName="first_name">
+    <mat-icon matPrefix>account_circle</mat-icon>
+    <mat-error *ngIf="formRegister.get('first_name').invalid">
+      {{ getMessage(formRegister.get('first_name')) }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" >
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Last Name" formControlName="last_name">
+    <mat-icon matPrefix>account_circle</mat-icon>
+    <mat-error *ngIf="formRegister.get('last_name').invalid">
+      {{ getMessage(formRegister.get('last_name')) }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" >
+    <mat-label>BirthDay</mat-label>
+    <input matInput placeholder="BirthDay" formControlName="birthday" type="date">
+    <mat-icon matPrefix>date</mat-icon>
+    <mat-error *ngIf="formRegister.get('birthday').invalid">
+      {{ getMessage(formRegister.get('birthday')) }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" >
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Username" formControlName="username">
+    <mat-icon matPrefix>account_circle</mat-icon>
+    <mat-error *ngIf="formRegister.get('username').invalid">{{ getMessage(formRegister.get('username')) }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Password" formControlName="password">
+    <mat-icon matPrefix>password</mat-icon>
+    <mat-error *ngIf="formRegister.get('password').invalid">{{ getMessage(formRegister.get('password')) }}</mat-error>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="formRegister.invalid">Register</button>
+</form>
